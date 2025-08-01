@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Gemini AI for ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>1.1</XMI.exporterVersion>
+    </XMI.documentation>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model name="Attendance Tracker Model" xmi.id="model.1">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Actor name="Teacher" xmi.id="actor.teacher" isRoot="false" isLeaf="false" isAbstract="false"/>
+        
+        <UML:Stereotype name="include" xmi.id="stereotype.include" baseClass="Dependency"/>
+        
+        <UML:Package name="Attendance Tracker System" xmi.id="system.package" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:UseCase name="View Assigned Classes" xmi.id="uc.view.classes" isRoot="false" isLeaf="false" isAbstract="false"/>
+            <UML:UseCase name="Take Attendance" xmi.id="uc.take.attendance" isRoot="false" isLeaf="false" isAbstract="false"/>
+            <UML:UseCase name="View Students in Class" xmi.id="uc.view.students" isRoot="false" isLeaf="false" isAbstract="false"/>
+            <UML:UseCase name="Generate Attendance Report" xmi.id="uc.generate.report" isRoot="false" isLeaf="false" isAbstract="false"/>
+            <UML:UseCase name="View Profile" xmi.id="uc.view.profile" isRoot="false" isLeaf="false" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Association xmi.id="assoc.teacher.view.classes">
+          <UML:Association.connection>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:Actor xmi.idref="actor.teacher"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:UseCase xmi.idref="uc.view.classes"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc.teacher.take.attendance">
+          <UML:Association.connection>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:Actor xmi.idref="actor.teacher"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:UseCase xmi.idref="uc.take.attendance"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc.teacher.generate.report">
+          <UML:Association.connection>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:Actor xmi.idref="actor.teacher"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:UseCase xmi.idref="uc.generate.report"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc.teacher.view.profile">
+          <UML:Association.connection>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:Actor xmi.idref="actor.teacher"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd>
+              <UML:AssociationEnd.participant><UML:UseCase xmi.idref="uc.view.profile"/></UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Dependency xmi.id="dependency.include.1">
+          <UML:ModelElement.stereotype>
+            <UML:Stereotype xmi.idref="stereotype.include"/>
+          </UML:ModelElement.stereotype>
+          <UML:Dependency.client>
+            <UML:UseCase xmi.idref="uc.take.attendance"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:UseCase xmi.idref="uc.view.students"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
